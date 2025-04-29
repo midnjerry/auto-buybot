@@ -1,4 +1,5 @@
 # Auto Buybot
+![Auto Buybot executing multiple buybacks](./images/screenshot.png)
 Auto Buybot is a lightweight script that automatically buys a token of your choice whenever new SOL is detected in your wallet. 
 
 It's perfect for auto-compounding strategies, auto-buybacks, or any setup where you want instant reaction to incoming SOL.
@@ -11,8 +12,6 @@ It's perfect for auto-compounding strategies, auto-buybacks, or any setup where 
 - 📦 Simple setup wizard
 - 🛡️ Safe password-protected environment loading
 - ⚡ Supports custom RPC endpoints (`config.json`)
-
-![Auto Buybot executing multiple buybacks](./images/screenshot.png)
 
 ## 🔐 Security Warning
 
