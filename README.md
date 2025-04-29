@@ -94,7 +94,7 @@ This will:
 
 After setup, you can **manually edit** `config.json` at any time to:
 
-- Change token addresses
+- Change the token each wallet purchases
 - Change wallet names
 - Update your RPC endpoint
 
