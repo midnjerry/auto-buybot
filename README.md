@@ -28,9 +28,9 @@ It's perfect for auto-compounding strategies, auto-buybacks, or any setup where 
 > 
 > The creator of this script is **not responsible** for any loss of funds or security issues resulting from the use of this code.
 
-# 🛠 Installation Steps
+## 🛠 Installation Steps
 
-## 1. Install Node.js v20+
+### 1. Install Node.js v20+
 
 This project requires **Node.js version 20 or higher**.
 
@@ -53,7 +53,7 @@ node --version
 
 ---
 
-## 2. Clone this repository
+### 2. Clone this repository
 
 ```bash
 git clone https://github.com/yourusername/auto-buybot.git
@@ -62,7 +62,7 @@ cd auto-buybot
 
 ---
 
-## 3. Install dependencies
+### 3. Install dependencies
 
 ```bash
 npm install
@@ -72,7 +72,7 @@ This will install all required Node.js modules.
 
 ---
 
-## 4. Run the setup wizard
+### 4. Run the setup wizard
 
 ```bash
 npm run setup
@@ -90,7 +90,7 @@ This will:
 
 ---
 
-## 5. (Optional) Manually edit config.json
+### 5. (Optional) Manually edit config.json
 
 After setup, you can **manually edit** `config.json` at any time to:
 
@@ -102,7 +102,7 @@ After setup, you can **manually edit** `config.json` at any time to:
 
 ---
 
-## 6. Start the bot
+### 6. Start the bot
 
 ```bash
 npm run start
