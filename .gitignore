@@ -1,3 +1,10 @@
+# Don't files generate by setup-bot.js
+config.json
+.env.enc
+
+#VS Code
+.vscode
+
 # Logs
 logs
 *.log
@@ -74,6 +81,7 @@ web_modules/
 
 # dotenv environment variable files
 .env
+.env.enc
 .env.development.local
 .env.test.local
 .env.production.local

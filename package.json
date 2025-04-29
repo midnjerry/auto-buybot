@@ -1,0 +1,20 @@
+{
+  "name": "auto-buybot",
+  "version": "1.0.0",
+  "description": "Auto Buybot is a lightweight script that automatically buys a token of your choice whenever new SOL is detected in your wallet.",
+  "scripts": {
+    "setup": "node setup-bot.js",
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@project-serum/anchor": "^0.26.0",
+    "@solana/web3.js": "^1.98.2",
+    "axios": "^1.9.0",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.5.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "author": "Jerry Balderas",
+  "type": "module",
+  "license": "ISC"
+}
