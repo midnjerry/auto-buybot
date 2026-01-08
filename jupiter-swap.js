@@ -14,10 +14,33 @@ export async function swap(connection, keyPair, inputMint, outputMint, lamports)
     
     
     // retrieve indexed routed map
-    let response = await
-        axios.get(`${ROOT_QUOTE_URL}?inputMint=${inputMint}&outputMint=${outputMint}&amount=${lamports}&slippageBps=3000`);
+    let response;
+    try {
+        response = await axios.get(`${ROOT_QUOTE_URL}?inputMint=${inputMint}&outputMint=${outputMint}&amount=${lamports}&slippageBps=50`, {
+            headers: {
+                'Accept': 'application/json',
+                'User-Agent': 'Mozilla/5.0'
+            }
+        });
+    } catch (error) {
+        if (error.response) {
+            console.error('Jupiter API Error:', error.response.status, error.response.data);
+            // If 401, it might be that Jupiter requires authentication now
+            if (error.response.status === 401) {
+                console.error('Jupiter API returned 401 Unauthorized. The API may now require authentication or the endpoint has changed.');
+                console.error('Please check https://docs.jup.ag/ for the latest API documentation.');
+            }
+            throw new Error(`Jupiter API error: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
+        }
+        throw error;
+    }
 
     const quoteResponse = response.data;
+    
+    if (!quoteResponse) {
+        throw new Error('Failed to get quote from Jupiter API');
+    }
+    
     const body = {
         // quoteResponse from /quote api
         quoteResponse: quoteResponse,
@@ -32,8 +55,15 @@ export async function swap(connection, keyPair, inputMint, outputMint, lamports)
     };
 
     // get serialized transactions for the swap
-
-    response = await axios.post(ROOT_SWAP_URL, body);
+    try {
+        response = await axios.post(ROOT_SWAP_URL, body);
+    } catch (error) {
+        if (error.response) {
+            console.error('Jupiter Swap API Error:', error.response.status, error.response.data);
+            throw new Error(`Jupiter Swap API error: ${error.response.status} - ${JSON.stringify(error.response.data)}`);
+        }
+        throw error;
+    }
 
     const { swapTransaction } = response.data;
 

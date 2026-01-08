@@ -129,5 +129,31 @@ The bot will:
 
 ---
 
+## 🔧 Troubleshooting
+
+### Terminal Compatibility Issues
+
+If you experience issues with interactive prompts (especially in Git Bash on Windows), try:
+
+1. **Use a different terminal:**
+   - Windows Command Prompt (cmd)
+   - PowerShell
+   - Windows Terminal
+   - Cursor's integrated terminal
+
+2. **Git Bash workaround:**
+   - Some Git Bash configurations may not properly handle interactive prompts
+   - If prompts don't work in your Git Bash, use one of the terminals listed above
+
+3. **Verify Node.js is working:**
+   ```bash
+   node --version
+   npm --version
+   ```
+
+The bot uses Node.js's built-in `readline` module for interactive prompts, which works best in standard terminal environments.
+
+---
+
 
 
